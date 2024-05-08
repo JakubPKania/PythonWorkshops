@@ -3,7 +3,7 @@
 # Python Workshops
 Repozytorium przygotowane na warsztaty z Pythona prowadzone dla KNMF na AGH 08.05 - 29.05 2024.
 
-Celem warsztatów jest zaprezentowanie języka programowania Python w kontekście zastosowania w matematyce finansowej.
+Celem warsztatw jest zaprezentowanie języka programowania Python w kontekście zastosowania w matematyce finansowej.
 Tematyką cyklu są symulacje i wycena opcji metodą Monte Carlo. Warsztaty podzielone są na trzy części po 1.5h, podczas których uczestnicy rozwiązywać będą praktyczne zadania używając popularnych pakietów pythona.
 
 
