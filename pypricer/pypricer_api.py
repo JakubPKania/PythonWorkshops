@@ -17,6 +17,8 @@ async def price_european_call(
     mu: float,
     rfr: float,
 ):
+
+
     """Calculate the price of a European call option using the Bachelier model.
 
     Args:
@@ -38,7 +40,22 @@ async def price_european_call(
     )
     price = option.price(paths, rfr=rfr)
     return {"Price": price}
-
+async def price_european_put(
+    strike_price: float,
+    expiry: float,
+    n_paths: int,
+    n_steps: int,
+    dt: float,
+    sigma: float,
+    mu: float,
+    rfr: float,
+):
+    option = european.EuropeanPutOption(strike_price=strike_price, expiry=expiry)
+    paths = wiener_process.generate_wiener_process(
+        n_paths=n_paths, n_steps=n_steps, dt=dt, sigma=sigma, mu=mu
+    )
+    price = option.price(paths, rfr=rfr)
+    return {"Price": price}
 
 if __name__ == "__main__":
     uvicorn.run("pypricer_api:app", host="localhost", port=8080, reload=True)
